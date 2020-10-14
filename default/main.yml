@@ -1,0 +1,103 @@
+---
+# system configuration
+system:
+  update: true
+  upgrade: true
+  sudo_without_password: true
+  publickeys:
+    - ssh-rsa
+
+# shell configuration
+shell:
+  # list of shell name eg. bash, zsh, fish
+  names:
+    - zsh
+  default: zsh
+  shellrc: | # append config for shellrc it's will managed by devopsible
+    # HI
+  zsh:
+    theme: power-level10k
+    zsh-autosuggestion: true
+    plugins:
+      - gcloud
+      - kubectl
+  bash:
+  fish:
+
+# install software managed by devopsible (Debian / Ubuntu)
+tools:
+  ansible:
+    state: true
+    version: latest
+  terraform:
+    state: true
+    version: latest
+  helm:
+    state: true
+    version: "3"
+  helm2:
+    state: true
+    version: "2"
+  gcloud:
+  aws:
+  fzf:
+  tmux:
+  kubectl:
+  kubens:
+  kubectx:
+  k9s:
+  heroku:
+  kompose:
+  travis:
+  docker:
+  argocd:
+  rancher:
+  sonar-scanner:
+  screenfetch:
+  neofetch:
+  fortune:
+  thefuck:
+
+  sl:
+  cowsay:
+  cmatrix:
+  lolcat:
+  asciiquarium:
+
+  lens:
+  gitkraken:
+    version: latest
+    state: true
+  vscode:
+
+# install programming languague
+programming_languague:
+  golang:
+  nodejs:
+  ruby:
+  deno:
+  rust:
+  lua:
+  java:
+
+python:
+  # install software by pip2
+  pip2:
+
+  # install software by pip3
+  pip3:
+
+# install software by snap store (only Ubuntu)
+snap:
+
+# install software by apt (Debian / Ubuntu)
+apt_repositorys:
+apt:
+  - fonts-noto-color-emoji
+  - fonts-noto
+  - libnss3-dev
+  - libgtk2.0-0
+  - libgtk-3-0
+
+# install software by script, put url to shellscript
+shell_scripts:
